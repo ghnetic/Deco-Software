@@ -1,0 +1,85 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.container{
+  margin: 20px;
+  width: 100%;
+  padding: 0;
+  height: 100vh;
+
+}
+
+.row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-01{
+  background: #50A7FF;
+  position: relative;
+  display: block;
+  flex: 1;
+  max-width: 300px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-02{
+  background: #50A7FF;
+  position: relative;
+  flex: 1;
+  max-width: 460px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-03{
+  background: #03D29F;
+  position: relative;
+  flex: 1;
+  display: block;
+  max-width: 940px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  .attending-ticket{
+    font-size: 4rem;
+    margin-top: 1rem;
+  };
+  .attending-number{
+    font-size: 6rem;
+    font-weight: 700;
+  }
+  .name{
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
+@media (max-width:800px){
+  .card-01{
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .card-02{
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .card-03{
+    flex: 100%;
+    max-width: 100%;
+  }
+}

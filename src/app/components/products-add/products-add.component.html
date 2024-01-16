@@ -1,0 +1,66 @@
+<h2 mat-dialog-title>Agrega un nuevo accesorio</h2>
+<mat-dialog-content class="mat-typography">
+
+  <div class="example-container">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput [(ngModel)]="name" name="name" required>
+      <mat-icon matSuffix>badge</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Stock</mat-label>
+      <input matInput type="number" [(ngModel)]="stock" name="stock" maxlength="3" required>
+      <mat-icon matSuffix>production_quantity_limits</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Precio de compra</mat-label>
+      <input matInput [(ngModel)]="price" name="price" maxlength="4" required>
+      <mat-icon matSuffix>monetization_on</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Precio de venta</mat-label>
+      <input matInput [(ngModel)]="sold" name="sold" maxlength="4" required>
+      <mat-icon matSuffix>sell</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Sección</mat-label>
+      <input matInput [(ngModel)]="section" name="section" required>
+      <mat-icon matSuffix>category</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Garantia</mat-label>
+      <input matInput [(ngModel)]="warranty" name="warranty">
+      <mat-icon matSuffix>currency_exchange</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Código</mat-label>
+      <input matInput [(ngModel)]="code" name="code">
+      <mat-icon matSuffix>qr_code_scanner</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descripción</mat-label>
+      <input matInput [(ngModel)]="description" name="description" required>
+      <mat-icon matSuffix>description</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Proveedor</mat-label>
+      <input matInput [(ngModel)]="provider" name="provider">
+      <mat-icon matSuffix>local_shipping</mat-icon>
+    </mat-form-field>
+
+
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" color="" (click)="addProduct()">Agregar</button>
+</mat-dialog-actions>

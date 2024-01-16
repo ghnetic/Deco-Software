@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>Agrega un nuevo cliente</h2>
+<mat-dialog-content class="mat-typography">
+
+  <div class="example-container">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput [(ngModel)]="name" name="name" placeholder="Sofia Videa" required>
+      <mat-icon matSuffix>badge</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tipo</mat-label>
+      <mat-select [(ngModel)]="type">
+        <mat-option value="Celular">Celular</mat-option>
+        <mat-option value="Laptop">Laptop</mat-option>
+        <mat-option value="Tablet">Tablet</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Marca</mat-label>
+      <mat-select [(ngModel)]="brand">
+        <mat-option value="Apple">Apple</mat-option>
+        <mat-option value="Alcatel">Alcatel</mat-option>
+        <mat-option value="Samsung">Samsung</mat-option>
+        <mat-option value="Huawei">Huawei</mat-option>
+        <mat-option value="Xiaomi">Xiaomi</mat-option>
+        <mat-option value="Lenovo">Lenovo</mat-option>
+        <mat-option value="LG">LG</mat-option>
+        <mat-option value="Sony">Sony</mat-option>
+        <mat-option value="Microsoft">Microsoft</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descripción</mat-label>
+      <input matInput [(ngModel)]="description" name="description">
+      <mat-icon matSuffix>description</mat-icon>
+    </mat-form-field>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" color="primary" (click)="addClientDevice()">Agregar</button>
+</mat-dialog-actions>

@@ -1,0 +1,170 @@
+
+<body>
+
+  <main class="overflow-hidden">
+      <div class="step-bar">
+          <div class="bar">
+              <div class="w-100 fill"></div>
+          </div>
+          <div class="bar">
+              <div class="fill"></div>
+          </div>
+          <div class="bar">
+              <div class="fill"></div>
+          </div>
+
+      </div>
+      <form method="post" class="show-section" novalidate>
+
+        <section class="steps">
+          <div class="step-inner">
+
+              <!-- Question -->
+              <div class="quiz-question">
+                  Language / Idioma
+              </div>
+
+              <!-- form -->
+              <fieldset id="step0">
+                  <div class="row">
+                      <div class="col-md-3 tab-50">
+                          <div class="radio-field bounce-left">
+                              <input type="radio" name="op2" value="true" [(ngModel)]="english" id="language">
+                              <label>English</label>
+                          </div>
+                      </div>
+                      <div class="col-md-3 tab-50">
+                          <div class="radio-field bounce-left delay-100">
+                              <input type="radio" name="op2" value="false" id="language">
+                              <label>Español</label>
+                          </div>
+                      </div>
+                  </div>
+              </fieldset>
+              <div class="next-prev">
+                <button class="next"  type="button" (click)="onSubmit()">Next/Siguiente<i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+
+      </section>
+
+          <!-- step 1 -->
+          <section class="steps">
+              <div class="step-inner">
+
+                  <!-- Question -->
+                  <div class="quiz-question" *ngIf="!english">
+                      Ingresa tus datos
+                  </div>
+                  <div class="quiz-question" *ngIf="english">
+                    Complete your data
+                </div>
+
+                  <!-- form -->
+                  <fieldset id="step1">
+                      <div class="row">
+                          <div class="col-md-6 tab-50">
+                              <div class="form-floating mb-3">
+                                  <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName" id="firstName" placeholder="Ingresa tu nombre" required>
+                                  <label for="completeName" *ngIf="!english">Nombre y apellido</label>
+                                  <label for="completeName" *ngIf="english">Complete name</label>
+                                </div>
+                          </div>
+                          <div class="col-md-6 tab-50">
+                              <div class="form-floating mb-3">
+                                  <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName" id="lastName" placeholder="Ingresa tu número telefónico" required>
+                                  <label for="completeName" *ngIf="!english">Teléfono</label>
+                                  <label for="completeName" *ngIf="english">Phone</label>
+                                </div>
+                      </div>
+                      </div>
+                  </fieldset>
+                  <div class="next-prev">
+                    <button class="next"  type="button" (click)="onSubmit()" *ngIf="!english">Siguiente<i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="next"  type="button" (click)="onSubmit()" *ngIf="english">Next<i class="fa-solid fa-arrow-right"></i></button>
+                  </div>
+              </div>
+
+
+          </section>
+
+          <!-- step 1 -->
+          <section class="steps">
+              <div class="step-inner">
+
+
+                  <!-- Question -->
+                  <div class="quiz-question" *ngIf="!english">
+                      ¿En qué te podemos ayudar?
+                  </div>
+                  <div class="quiz-question" *ngIf="english">
+                    How can we help you today?
+                </div>
+
+                  <!-- form -->
+                  <fieldset id="step2">
+                      <div class="row">
+                          <div class="col-md-3 tab-50">
+                              <div class="radio-field bounce-left">
+                                  <input type="radio" name="op1" [(ngModel)]="category" value="Reparar Producto">
+                                  <label *ngIf="!english">Reparar Producto</label>
+                                  <label *ngIf="english">Repair product</label>
+                              </div>
+                          </div>
+                          <div class="col-md-3 tab-50">
+                              <div class="radio-field bounce-left delay-100">
+                                  <input type="radio" name="op1" [(ngModel)]="category" value="Recoger Producto">
+                                  <label *ngIf="!english">Recoger Producto</label>
+                                  <label *ngIf="english">Pick Up Product</label>
+                              </div>
+                          </div>
+                          <div class="col-md-3 tab-50">
+                              <div class="radio-field bounce-left delay-200">
+                                  <input type="radio" name="op1" [(ngModel)]="category" value="Compra General">
+                                  <label *ngIf="!english">Compra General</label>
+                                  <label *ngIf="english">General Purchase</label>
+                              </div>
+                          </div>
+                          <div class="col-md-3 tab-50">
+                              <div class="radio-field bounce-left delay-300">
+                                  <input type="radio" name="op1" [(ngModel)]="category" value="Consulta General">
+                                  <label *ngIf="!english">Consulta General</label>
+                                  <label *ngIf="english">General Question</label>
+                              </div>
+                          </div>
+                      </div>
+
+                  </fieldset>
+                  <div class="next-prev">
+                    <button class="next"  type="button" (click)="onSubmit()" *ngIf="!english">Siguiente<i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="next"  type="button" (click)="onSubmit()" *ngIf="english">Next<i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+          </section>
+
+
+          <!-- step 2 -->
+
+
+          <section class="steps">
+            <div class="step-inner">
+
+                <!-- Question -->
+                <div class="quiz-question" *ngIf="!english">
+                    ¡Listo! En la pantalla verás tu turno.
+                </div>
+                <div class="quiz-question" *ngIf="english">
+                  Done! In the screen you will see your turn.
+              </div>
+
+            </div>
+        </section>
+
+
+      </form>
+  </main>
+
+
+</body>

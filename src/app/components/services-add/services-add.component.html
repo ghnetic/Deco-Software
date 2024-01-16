@@ -1,0 +1,56 @@
+<h2 mat-dialog-title>Agrega un servicio</h2>
+<mat-dialog-content class="mat-typography">
+
+  <div class="example-container">
+
+    <mat-form-field>
+      <mat-label>Tipo Servicio</mat-label>
+      <mat-select [(ngModel)]="type">
+        <mat-option value="Reparación">Reparación</mat-option>
+        <mat-option value="Diagnostico">Diagnostico</mat-option>
+        <mat-option value="Consultoria">Consultoria</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Dispositivo</mat-label>
+      <mat-select [(ngModel)]="device">
+        <mat-option value="Celular">Celular</mat-option>
+        <mat-option value="Tablet">Tablet</mat-option>
+        <mat-option value="Laptop">Laptop</mat-option>
+        <mat-option value="PlayStation">PlayStation</mat-option>
+        <mat-option value="Consola">Consola</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ingrese el nombre</mat-label>
+      <input matInput [(ngModel)]="name" name="name" required>
+      <mat-icon matSuffix>badge</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Código de Barra</mat-label>
+      <input [(ngModel)]="code" name="code" matInput>
+      <mat-icon matSuffix>qr_code_scanner</mat-icon>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Descripción</mat-label>
+      <input matInput [(ngModel)]="description" name="description">
+      <mat-icon matSuffix>description</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Precio</mat-label>
+      <input matInput [(ngModel)]="price" name="price">
+      <mat-icon matSuffix>paid</mat-icon>
+    </mat-form-field>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" color="primary" (click)="addService()">Agregar</button>
+</mat-dialog-actions>

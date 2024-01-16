@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Agrega un nuevo problema</h2>
+<mat-dialog-content class="mat-typography">
+
+  <div class="example-container">
+    <mat-form-field>
+      <mat-label>Ingrese el problema</mat-label>
+      <input matInput [(ngModel)]="problem" name="problem" required>
+      <mat-icon matSuffix>report_problem</mat-icon>
+    </mat-form-field>
+
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" color="primary" (click)="addProblem()">Agregar</button>
+</mat-dialog-actions>

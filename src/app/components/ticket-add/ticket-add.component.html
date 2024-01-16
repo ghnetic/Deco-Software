@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>Agrega un ticket manual</h2>
+<mat-dialog-content class="mat-typography">
+
+  <div class="example-container">
+    <mat-form-field>
+      <mat-label>Ingrese el nombre</mat-label>
+      <input matInput [(ngModel)]="name" name="name" placeholder="Sofia Videa" required>
+      <mat-icon matSuffix>badge</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Teléfono</mat-label>
+      <input [(ngModel)]="phone" name="phone" matInput maxlength="10" placeholder="555-555-1234">
+      <mat-icon matSuffix>call</mat-icon>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Categoria</mat-label>
+      <mat-select [(ngModel)]="category">
+        <mat-option value="Reparar Producto">Reparar Producto</mat-option>
+        <mat-option value="Recoger Producto">Recoger Producto</mat-option>
+        <mat-option value="Compra General">Compra General</mat-option>
+        <mat-option value="Consulta General">Consulta General</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Idioma</mat-label>
+      <mat-select [(ngModel)]="language">
+        <mat-option value="Reparar Producto">Inglés</mat-option>
+        <mat-option value="Recoger Producto">Español</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button color="primary" [mat-dialog-close]="true" (click)="addClient()">Agregar</button>
+</mat-dialog-actions>

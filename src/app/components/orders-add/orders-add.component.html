@@ -1,0 +1,72 @@
+<h2 mat-dialog-title>Agrega una nueva orden</h2>
+<mat-dialog-content class="mat-typography">
+
+  <div class="example-container">
+
+    <form>
+      <mat-form-field>
+        <mat-label>Cliente</mat-label>
+        <input
+               matInput
+               [(ngModel)]="client"
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+               <button matSuffix mat-raised-button style="height: 3.5rem;" (click)="openDialog()" color="primary">
+                + Nuevo
+              </button>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+
+
+    <mat-form-field>
+      <mat-label>Dispositivo del cliente</mat-label>
+      <input matInput [(ngModel)]="device" name="device" required>
+      <button matSuffix mat-raised-button style="height: 3.5rem;" color="primary" aria-label="Clear" (click)="openClientDevice()">
+        + Nuevo
+      </button>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Fecha de Entrega</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="dueDate" name="dueDate">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Hora de Entrega</mat-label>
+      <input matInput [(ngModel)]="dueTime" name="dueTime" required>
+      <mat-icon matSuffix>schedule</mat-icon>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Problema</mat-label>
+      <mat-select [(ngModel)]="problem" name="problem">
+        <mat-option *ngFor="let option of optionsProblem" [value]="option">{{option}}</mat-option>
+      </mat-select>
+      <button matSuffix mat-raised-button style="height: 3.5rem;" (click)="openDialogProblema()" color="primary" aria-label="Clear">
+        + Nuevo
+      </button>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input matInput [(ngModel)]="password" name="password">
+      <mat-hint>Contraseña del dispositivo</mat-hint>
+      <mat-icon matSuffix>password</mat-icon>
+    </mat-form-field>
+
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" color="" (click)="addProduct()">Agregar</button>
+</mat-dialog-actions>

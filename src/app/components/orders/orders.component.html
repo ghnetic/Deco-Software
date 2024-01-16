@@ -1,0 +1,150 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span><img src="../../../assets/images/logo-header.png" class="logo" style="cursor: pointer;" alt="logo"
+        [routerLink]="['/welcome']"></span>
+
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Cerrar Sesion"
+      title="Cerrar Sesión">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="app-container">
+  <mat-sidenav opened mode="side" [class.mat-elevation-z4]="true" class="app-sidenav">
+    <mat-nav-list>
+      <mat-list-item  style="background-color: rgb(225, 225, 225);">
+        <mat-icon>dashboard</mat-icon>
+        <strong>T I E N D A</strong>
+      </mat-list-item>
+      <br>
+      <mat-list-item  [routerLink]="['/tickets-software']">
+        <mat-icon style="color: grey; margin-right: 0.5rem;">confirmation_number</mat-icon>
+        Tickets
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="['/clientes']">
+        <mat-icon style="color: grey; margin-right: 0.5rem;">groups</mat-icon>
+        Clientes
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="['/productos']">
+        <mat-icon style="color: grey; margin-right: 0.5rem;">inventory</mat-icon>
+        Productos
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="['/servicios']">
+        <mat-icon style="color: grey; margin-right: 0.5rem;">device_unknown</mat-icon>
+        Servicios
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="['/ordenes']">
+        <mat-icon style="color: grey; margin-right: 0.5rem;">fact_check</mat-icon>
+        <strong>Órdenes</strong>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+<br>
+      <mat-list-item style="background-color: rgb(225, 225, 225);" [routerLink]="['/']">
+        <mat-icon>dashboard</mat-icon>
+        <strong>T A L L E R</strong>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <br>
+      <mat-list-item  [routerLink]="['/']">
+        <mat-icon style="color: grey; margin-right: 0.5rem;">local_shipping</mat-icon>
+        Proveedores
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="['/']">
+        <mat-icon style="color: grey; margin-right: 0.5rem;">checklist_rtl</mat-icon>
+        Pedidos
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="['/']">
+        <mat-icon style="color: grey; margin-right: 0.5rem;">construction</mat-icon>
+        Equipo
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <br>
+    <h1 style="font-weight: 700; margin-left: 3rem; display: inline;">Órdenes DECO
+    </h1>
+
+    <br><br>
+    <mat-divider></mat-divider>
+
+    <section style="background-color: rgba(206, 207, 207, 0.384);">
+
+      <br>
+      <!--TABLE OF USERS-->
+      <mat-form-field style="margin-left: 1rem;">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar órden">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <button mat-flat-button color="primary" style="margin-left: 30rem;" (click)="openDialog()">Crear Orden</button>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Cliente </th>
+          <td mat-cell *matCellDef="let element"> {{element.client}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="school">
+          <th mat-header-cell *matHeaderCellDef> Dispositivo </th>
+          <td mat-cell *matCellDef="let element"> {{element.device}} </td>
+        </ng-container>
+
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="timeRegisteredOne">
+          <th mat-header-cell *matHeaderCellDef> Problema  </th>
+          <td mat-cell *matCellDef="let element">
+            {{element.problem}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="participants">
+          <th mat-header-cell *matHeaderCellDef> Fecha Entrega </th>
+          <td mat-cell *matCellDef="let element">
+
+            {{element.dueDate}}
+          </td>
+        </ng-container>
+
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="dayOne">
+          <th mat-header-cell *matHeaderCellDef> Hora Entrega </th>
+          <td mat-cell *matCellDef="let element">
+            {{element.dueTime}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+
+            <mat-icon title="Ver Información" style="cursor: pointer; color: blue;"
+              (click)="getOrder(element)">visibility</mat-icon>
+              <mat-icon title="Ver Historial" style="cursor: pointer; color: green;">inventory_2</mat-icon>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </section>
+    <br><br>
+
+    <mat-divider style="margin-top: 1%"></mat-divider>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

@@ -1,0 +1,25 @@
+
+
+  <!--card layout start-->
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <span style="display: flex; justify-content: center; align-items: center;"><img src="../../../assets/images/new-logo.png" width="50%" height="50%" alt="" srcset=""></span>
+</div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="card-03" style="justify-content: center; align-items: center; text-align: center;">
+        <h3 class="attending-ticket">Attending Ticket: </h3><br>
+        <h1 class="attending-number">{{atendiendo.ticketNumber}}</h1>
+        <p class="name">{{atendiendo.name}} - {{atendiendo.category}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card-01" *ngFor="let item of noAtendido;" style="justify-content: center; align-items: center; text-align: center;">
+        <h3 class="attending-ticket">Next Ticket: </h3><br>
+        <h1 class="attending-number">{{item.ticketNumber}}</h1>
+        <p class="attending-number">{{item.name}}</p>
+      </div>
+    </div>
+
+  </div>
