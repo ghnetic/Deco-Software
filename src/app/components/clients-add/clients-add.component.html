@@ -10,15 +10,15 @@
 
     <mat-form-field class="example-full-width">
       <mat-label>Teléfono</mat-label>
-      <input [(ngModel)]="phone" name="phone" matInput maxlength="10" placeholder="555-555-1234">
+      <input [(ngModel)]="phone" name="phone" matInput maxlength="11" placeholder="555-555-1234">
       <mat-icon matSuffix>call</mat-icon>
     </mat-form-field>
 
 
     <mat-form-field>
-      <mat-label>Ingrese el correo</mat-label>
-      <input matInput [(ngModel)]="email" name="email" placeholder="pat@example.com" required>
-      <mat-icon matSuffix>email</mat-icon>
+      <mat-label>Ingrese la direccion</mat-label>
+      <input matInput [(ngModel)]="email" name="email" placeholder="Direccion cliente" required>
+      <mat-icon matSuffix>home</mat-icon>
     </mat-form-field>
   </div>
 

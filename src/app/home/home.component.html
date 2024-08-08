@@ -73,7 +73,7 @@
                           </div>
                           <div class="col-md-6 tab-50">
                               <div class="form-floating mb-3">
-                                  <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName" id="lastName" placeholder="Ingresa tu número telefónico" required>
+                                  <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName" id="lastName" disabled="true" placeholder="Ingresa tu número telefónico" required>
                                   <label for="completeName" *ngIf="!english">Teléfono</label>
                                   <label for="completeName" *ngIf="english">Phone</label>
                                 </div>
@@ -96,10 +96,10 @@
 
                   <!-- Question -->
                   <div class="quiz-question" *ngIf="!english">
-                      ¿En qué te podemos ayudar?
+                      ¿Que salsa es tu favorita?
                   </div>
                   <div class="quiz-question" *ngIf="english">
-                    How can we help you today?
+                    What is your favorite sauce?
                 </div>
 
                   <!-- form -->
@@ -107,30 +107,30 @@
                       <div class="row">
                           <div class="col-md-3 tab-50">
                               <div class="radio-field bounce-left">
-                                  <input type="radio" name="op1" [(ngModel)]="category" value="Reparar Producto">
-                                  <label *ngIf="!english">Reparar Producto</label>
-                                  <label *ngIf="english">Repair product</label>
+                                  <input type="radio" name="op1" [(ngModel)]="category" value="Verde">
+                                  <label *ngIf="!english">Verde - No picante</label>
+                                  <label *ngIf="english">Green - Not Spicy</label>
                               </div>
                           </div>
                           <div class="col-md-3 tab-50">
                               <div class="radio-field bounce-left delay-100">
-                                  <input type="radio" name="op1" [(ngModel)]="category" value="Recoger Producto">
-                                  <label *ngIf="!english">Recoger Producto</label>
-                                  <label *ngIf="english">Pick Up Product</label>
+                                  <input type="radio" name="op1" [(ngModel)]="category" value="Naranja">
+                                  <label *ngIf="!english">Naranja - Picante</label>
+                                  <label *ngIf="english">Orange -Spicy</label>
                               </div>
                           </div>
                           <div class="col-md-3 tab-50">
                               <div class="radio-field bounce-left delay-200">
-                                  <input type="radio" name="op1" [(ngModel)]="category" value="Compra General">
-                                  <label *ngIf="!english">Compra General</label>
-                                  <label *ngIf="english">General Purchase</label>
+                                  <input type="radio" name="op1" [(ngModel)]="category" value="Roja">
+                                  <label *ngIf="!english">Roja - Picante</label>
+                                  <label *ngIf="english">Red - Spicy</label>
                               </div>
                           </div>
                           <div class="col-md-3 tab-50">
                               <div class="radio-field bounce-left delay-300">
-                                  <input type="radio" name="op1" [(ngModel)]="category" value="Consulta General">
-                                  <label *ngIf="!english">Consulta General</label>
-                                  <label *ngIf="english">General Question</label>
+                                  <input type="radio" name="op1" [(ngModel)]="category" value="Ninguna">
+                                  <label *ngIf="!english">Ninguna</label>
+                                  <label *ngIf="english">None</label>
                               </div>
                           </div>
                       </div>
@@ -153,10 +153,10 @@
 
                 <!-- Question -->
                 <div class="quiz-question" *ngIf="!english">
-                    ¡Listo! En la pantalla verás tu turno.
+                    Muchas gracias!
                 </div>
                 <div class="quiz-question" *ngIf="english">
-                  Done! In the screen you will see your turn.
+                  Thanks!
               </div>
 
             </div>

@@ -1,4 +1,6 @@
 export default interface Problems{
   id?: string;
-  problem: string;
+  name: string;
+  phone: string;
+  daysDelivery: string;
 }

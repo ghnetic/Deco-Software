@@ -19,7 +19,7 @@ let ORRDERS: Order[];
 })
 export class OrdersComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'school', 'dayOne', 'timeRegisteredOne','participants', 'acciones'];
+  displayedColumns: string[] = ['name', 'timeRegisteredOne', 'dayOne','participants', 'acciones'];
   dataSource: any;
   closeResult = '';
   coachForm: any;

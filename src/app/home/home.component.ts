@@ -8,7 +8,7 @@ import { TicketsService } from '../services/tickets.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  title = 'capacitacion-uno';
+  title = 'encuesta-salsa';
   divs: any[];
   now: number;
   firstName= '';
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit{
     this.ticketService.getTickets().subscribe(response =>{
       this.ticketSort = response.sort((a, b) => a.ticketNumber - b.ticketNumber);
       this.ticketNumber = this.ticketSort[this.ticketSort.length -1].ticketNumber
-      console.log("El ultimo ticket es: ", this.ticketNumber);
+      console.log("La ultima respuesta es: ", this.ticketNumber);
     })
   }
 

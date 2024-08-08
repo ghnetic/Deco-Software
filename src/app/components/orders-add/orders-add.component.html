@@ -1,11 +1,11 @@
-<h2 mat-dialog-title>Agrega una nueva orden</h2>
+<h2 mat-dialog-title>Agrega un nuevo pago</h2>
 <mat-dialog-content class="mat-typography">
 
   <div class="example-container">
 
     <form>
       <mat-form-field>
-        <mat-label>Cliente</mat-label>
+        <mat-label>Empleado</mat-label>
         <input
                matInput
                [(ngModel)]="client"
@@ -22,31 +22,8 @@
       </mat-form-field>
     </form>
 
-
     <mat-form-field>
-      <mat-label>Dispositivo del cliente</mat-label>
-      <input matInput [(ngModel)]="device" name="device" required>
-      <button matSuffix mat-raised-button style="height: 3.5rem;" color="primary" aria-label="Clear" (click)="openClientDevice()">
-        + Nuevo
-      </button>
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Fecha de Entrega</mat-label>
-      <input matInput [matDatepicker]="picker" [(ngModel)]="dueDate" name="dueDate">
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Hora de Entrega</mat-label>
-      <input matInput [(ngModel)]="dueTime" name="dueTime" required>
-      <mat-icon matSuffix>schedule</mat-icon>
-    </mat-form-field>
-
-
-    <mat-form-field>
-      <mat-label>Problema</mat-label>
+      <mat-label>Proveedor</mat-label>
       <mat-select [(ngModel)]="problem" name="problem">
         <mat-option *ngFor="let option of optionsProblem" [value]="option">{{option}}</mat-option>
       </mat-select>
@@ -56,10 +33,26 @@
     </mat-form-field>
 
 
+
     <mat-form-field>
-      <mat-label>Contraseña</mat-label>
+      <mat-label>Fecha de Pago</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="dueDate" name="dueDate">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Cantidad</mat-label>
+      <input matInput [(ngModel)]="dueTime" name="dueTime" required>
+      <mat-icon matSuffix>money</mat-icon>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <mat-label>Comentario</mat-label>
       <input matInput [(ngModel)]="password" name="password">
-      <mat-hint>Contraseña del dispositivo</mat-hint>
+      <mat-hint>Algun comentario del pago</mat-hint>
       <mat-icon matSuffix>password</mat-icon>
     </mat-form-field>
 

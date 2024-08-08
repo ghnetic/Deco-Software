@@ -16,7 +16,7 @@ let SERVICES: Service[];
 })
 export class ServicessComponent implements OnInit {
 
-  displayedColumns: string[] = ['type', 'device', 'code', 'price', 'acciones'];
+  displayedColumns: string[] = ['name', 'device', 'code','type', 'price', 'acciones'];
   dataSource: any;
   closeResult = '';
   coachForm: any;
@@ -55,11 +55,11 @@ export class ServicessComponent implements OnInit {
           title: 'Información del Servicio',
           html: `
             <div style="text-align: left; font-family: Arial, sans-serif;">
-              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Tipo:</b> <span style="color: #2c3e50;">${service.type}</span></p>
-              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Precio:</b> <span style="color: #2c3e50;">${service.price}</span></p>
-              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Dispositivo:</b> <span style="color: #2c3e50;">${service.device}</span></p>
-              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Código:</b> <span style="color: #2c3e50;">${service.code}</span></p>
-              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Descripción:</b> <span style="color: #2c3e50;">${service.description}</span></p>
+              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Nombre:</b> <span style="color: #2c3e50;">${service.name}</span></p>
+              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Tipo Pago:</b> <span style="color: #2c3e50;">${service.type}</span></p>
+              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Area:</b> <span style="color: #2c3e50;">${service.device}</span></p>
+              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Código Empleado:</b> <span style="color: #2c3e50;">${service.code}</span></p>
+              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Telefono:</b> <span style="color: #2c3e50;">${service.description}</span></p>
             </div>
           `,
           showCloseButton: true

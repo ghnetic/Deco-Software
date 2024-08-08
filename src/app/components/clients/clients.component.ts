@@ -56,7 +56,7 @@ export class ClientsComponent implements OnInit {
             <div style="text-align: left; font-family: Arial, sans-serif;">
               <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Nombre:</b> <span style="color: #2c3e50;">${client.name}</span></p>
               <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Teléfono:</b> <span style="color: #2c3e50;">${client.phone}</span></p>
-              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Correo:</b> <span style="color: #2c3e50;">${client.email}</span></p>
+              <p style="color: #4a4a4a; margin-bottom: 10px;"><b>Direccion:</b> <span style="color: #2c3e50;">${client.email}</span></p>
             </div>
           `,
           showCloseButton: true
